@@ -23,7 +23,7 @@ module CollectiveIdea #:nodoc:
           acts_as_nested_set_options[:primary_column]
         end
 
-        def order_column
+        def awesome_nested_set_order_column
           acts_as_nested_set_options[:order_column] || left_column_name
         end
 
@@ -60,7 +60,7 @@ module CollectiveIdea #:nodoc:
         end
 
         def quoted_order_column_name
-          model_connection.quote_column_name(order_column)
+          model_connection.quote_column_name(awesome_nested_set_order_column)
         end
 
         def quoted_primary_key_column_full_name
